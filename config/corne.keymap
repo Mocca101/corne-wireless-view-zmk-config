@@ -107,6 +107,15 @@ ZMK_TAP_DANCE(num_dance, bindings = <&num_word NUM>, <&sl NUM>;
 ZMK_TRI_STATE(swapper, bindings = <&kt LALT>, <&kp TAB>, <&kt LALT>;
               ignored-key-positions = <LT2 RT2 RM1 RM2 RM3>;)
 
+
+// Misc aliases.
+#define DSK_PREV  &hmr LGUI LG(LC(LEFT)) // Previous desktop.
+#define DSK_NEXT  &hmr LSHIFT LG(LC(RIGHT)) // Next     desktop.
+#define PIN_WIN   &kp LG(LC(LS(Q)))       // Pin window across desktops.
+#define PIN_APP   &kp LG(LC(LS(A)))       // Pin application across desktops.
+#define DSK_MGR   &kp LA(GRAVE)           // Desktop manager.
+#define VOL_DOWN  &hmr LALT C_VOL_DN
+
 ZMK_CONDITIONAL_LAYER(sys, FN NUM, SYS) // FN + NUM --> SYS.
 
 #ifndef ZMK_BASE_LAYER
@@ -135,9 +144,14 @@ ZMK_BASE_LAYER(Nav,
 //																								 ╰───────────────┴───────────────┴───────────────╯		╰───────────────┴───────────────┴───────────────╯
 )
 
-
-
-// ZMK_BASE_LAYER(Nav,
+ZMK_BASE_LAYER(FN,
+// ╭───────────────┬───────────────┬───────────────┬───────────────┬───────────────┬───────────────╮		╭───────────────┬───────────────┬────────────────┬───────────────┬───────────────┬────────────────╮
+			___				 			&kp F12       	&kp F7        		&kp F8        	&kp F9      		___      	 ,			___     				&kp C_PREV    	&kp C_VOL_UP  	&kp C_NEXT  				___							___					,
+			___    					&hml LCTRL F11 	&hml LSHIFT F4	&hml LALT F5    &hml LGUI F6			___		 		 ,			___     				DSK_PREV      	VOL_DOWN      	DSK_NEXT     				___							___					,
+			___    					&kp F10       	&kp F1        		&kp F2        	&kp F3     			___		 	 	 ,			PIN_APP       	PIN_WIN       	DSK_MGR           	___           	___  						___					,
+																										 	___        	 		___      	 				___      	 ,			&kp C_MUTE    	&kp C_PP        	 		___
+//																								 ╰───────────────┴───────────────┴───────────────╯		╰───────────────┴───────────────┴───────────────╯
+)
 // // ╭───────────────┬───────────────┬───────────────┬───────────────┬───────────────┬───────────────╮		╭───────────────┬───────────────┬────────────────┬───────────────┬───────────────┬────────────────╮
 // 			&kp TAB				 	&kp LA(F4)			 ___           &kp LS(TAB)   			&swapper      	___        ,			&kp PG_UP     		NAV_BSPC      		NAV_UP        	NAV_DEL       	___							___					,
 // 					___    					___    				___   					___    						___    				___		 		 ,			&kp PG_DN     		NAV_LEFT      		NAV_DOWN      	NAV_RIGHT     &kp RET						___					,
