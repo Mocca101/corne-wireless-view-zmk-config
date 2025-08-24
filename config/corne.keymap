@@ -98,8 +98,10 @@ MASK_MODS(masked_end,  (MOD_LCTL), &kp END)
 
 // Tap: num-word | double-tap: sticky num-layer | Hold: num-layer.
 #define SMART_NUM &smart_num NUM 0
+
 ZMK_HOLD_TAP(smart_num, bindings = <&mo>, <&num_dance>; flavor = "balanced";
              tapping-term-ms = <200>; quick-tap-ms = <QUICK_TAP_MS>;)
+
 ZMK_TAP_DANCE(num_dance, bindings = <&num_word NUM>, <&sl NUM>;
               tapping-term-ms = <200>;)
 
@@ -109,6 +111,13 @@ ZMK_TAP_DANCE(num_dance, bindings = <&num_word NUM>, <&sl NUM>;
 // Alt+Tab swapper, requires tri-state module.
 ZMK_TRI_STATE(swapper, bindings = <&kt LALT>, <&kp TAB>, <&kt LALT>;
               ignored-key-positions = <LT2 RT2 RM1 RM2 RM3>;)
+
+// Tap: space | Shift + tap: dot -> space -> sticky shift | Hold: nav layer.
+ZMK_HOLD_TAP(lt_spc, bindings = <&mo>, <&spc_morph>; flavor = "balanced";
+             tapping-term-ms = <200>; quick-tap-ms = <QUICK_TAP_MS>;)
+SIMPLE_MORPH(spc_morph, SFT, &kp SPACE, &dot_spc)
+ZMK_MACRO(dot_spc, bindings = <&kp DOT &kp SPACE &sk LSHFT>; wait-ms = <0>;
+          tap-ms = <5>;)
 
 
 // Misc aliases.
@@ -132,7 +141,7 @@ ZMK_BASE_LAYER(Base,
 			&kp TAB				&kp Q  						&kp W	  					&kp E					&kp R  					&kp T        ,			&kp Y						&kp U  					&kp I							&kp O    				&kp P						&kp BSPC			,
 			&kp ESC  			&hml LCTRL A  		&hml LSHIFT S	 	&hml LALT D     &hml LGUI F						&kp G  ,			&kp H    		 		&hmr RGUI J  		&hmr RALT K      	&hmr RSHIFT L   &hmr RCTRL SEMI  		&kp SQT		,
 			&kp LEFT_SHIFT    	&kp Z  						&kp X  						&kp C     		&kp V  					&kp B  ,			&kp N    				&kp M  					&kp COMMA  			&kp DOT  				&kp FSLH  			&kp ESC					,
-																											&kp LGUI  		&kp DEL  				&lt NAV SPACE  ,			&lt 2 RET  				&kp BSPC			&kp RALT
+																											&kp LGUI  		&lt_spc NAV 0  	&lt FN RET		 ,			&lt 2 RET  			SMART_NUM				&kp RALT
 //																								 ╰───────────────┴───────────────┴───────────────╯		╰───────────────┴───────────────┴───────────────╯
 )
 
