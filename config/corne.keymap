@@ -148,12 +148,14 @@ ZMK_MACRO(dot_spc, bindings = <&kp DOT &kp SPACE &sk LSHFT>; wait-ms = <0>;
 
 
 // Misc aliases.
-#define DSK_PREV  &hmr LGUI LG(LC(LEFT)) // Previous desktop.
+#define DSK_PREV  &kp LGUI LG(LC(LEFT)) // Previous desktop.
 #define DSK_NEXT  &hmr LSHIFT LG(LC(RIGHT)) // Next     desktop.
 #define PIN_WIN   &kp LG(LC(LS(Q)))       // Pin window across desktops.
 #define PIN_APP   &kp LG(LC(LS(A)))       // Pin application across desktops.
 #define DSK_MGR   &kp LA(GRAVE)           // Desktop manager.
-#define VOL_DOWN  &hmr LALT C_VOL_DN
+#define VOL_DOWN  &hmr LGUI C_VOL_DN
+#define VOL_UP  	&hmr LALT C_VOL_UP
+
 
 ZMK_CONDITIONAL_LAYER(sys, FN NUM, SYS) // FN + NUM --> SYS.
 
@@ -176,8 +178,8 @@ ZMK_BASE_LAYER(Base,
 
 ZMK_BASE_LAYER(Nav,
 // ╭───────────────┬───────────────┬───────────────┬───────────────┬───────────────┬───────────────╮		╭───────────────┬───────────────┬────────────────┬───────────────┬───────────────┬────────────────╮
-			&kp TAB				 	&kp LA(F4)			 ___           &kp LS(TAB)   			&swapper      	___        ,			&kp PG_UP     		NAV_BSPC      		NAV_UP        	NAV_DEL       	___							___					,
-					___    					___    				___   					___    						___    				___		 		 ,			&kp PG_DN     		NAV_LEFT      		NAV_DOWN      	NAV_RIGHT     &kp RET						___					,
+			&kp TAB				 	&kp LA(F4)			 ___           &kp LS(TAB)   			&swapper      	___        ,			NAV_DEL 		    &kp PG_UP     	&kp PG_DN  	 		NAV_BSPC       	___							___					,
+					___    					___    				___   					___    						___    				___		 		 ,			NAV_LEFT     		NAV_DOWN      	NAV_UP	      	NAV_RIGHT     &kp RET						___					,
 					___    					___    				___   					___    						___    				___		 		 ,			&kp INS       		&kp TAB       		___           	___           	___  						___					,
 																										 		___        	 			___      	 		___        ,			___        	 		___        	 		___
 //																								 ╰───────────────┴───────────────┴───────────────╯		╰───────────────┴───────────────┴───────────────╯
@@ -185,8 +187,8 @@ ZMK_BASE_LAYER(Nav,
 
 ZMK_BASE_LAYER(FN,
 // ╭───────────────┬───────────────┬───────────────┬───────────────┬───────────────┬───────────────╮		╭───────────────┬───────────────┬────────────────┬───────────────┬───────────────┬────────────────╮
-			___				 			&kp F12       	&kp F7        		&kp F8        	&kp F9      		___      	 ,			___     				&kp C_PREV    	&kp C_VOL_UP  	&kp C_NEXT  				___							___					,
-			___    					&hml LCTRL F11 	&hml LSHIFT F4	&hml LALT F5    &hml LGUI F6			___		 		 ,			___     				DSK_PREV      	VOL_DOWN      	DSK_NEXT     				___							___					,
+			___				 			&kp F12       	&kp F7        		&kp F8        	&kp F9      		___      	 ,			___     				&kp C_PREV    		&kp C_NEXT  			___							___							___					,
+			___    					&hml LCTRL F11 	&hml LSHIFT F4	&hml LALT F5    &hml LGUI F6			___		 		 ,			DSK_PREV     		VOL_DOWN		    VOL_UP  				DSK_NEXT     				___							___					,
 			___    					&kp F10       	&kp F1        		&kp F2        	&kp F3     			___		 	 	 ,			PIN_APP       	PIN_WIN       	DSK_MGR           	___           	___  						___					,
 																										 	___        	 		___      	 				___      	 ,			&kp C_MUTE    	&kp C_PP        	 		___
 //																								 ╰───────────────┴───────────────┴───────────────╯		╰───────────────┴───────────────┴───────────────╯
