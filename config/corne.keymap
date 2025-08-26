@@ -190,7 +190,7 @@ ZMK_BASE_LAYER(Base,
 
 ZMK_BASE_LAYER(Nav,
 // ╭───────────────┬───────────────┬───────────────┬───────────────┬───────────────┬───────────────╮		╭───────────────┬───────────────┬────────────────┬───────────────┬───────────────┬────────────────╮
-			&kp TAB				 	&kp LA(F4)			 ___           &kp LS(TAB)   			&swapper      	___        ,			___							NAV_DEL 		    &kp PG_UP     	&kp PG_DN  	 		NAV_BSPC						___					,
+			&kp TAB				 	&kp LA(F4)			 ___           &kp LS(TAB)   			&swapper      	___        ,			___							NAV_BSPC 		    &kp PG_UP     	&kp PG_DN  	 		NAV_DEL						___					,
 					___    					___    				___   					___    						___    				___		 		 ,			NAV_LEFT     		NAV_DOWN      	NAV_UP	      	NAV_RIGHT     &kp RET						___					,
 					___    					___    				___   					___    						___    				___		 		 ,			&kp INS       		&kp TAB       		___           	___           	___  						___					,
 																										 		___        	 			___      	 		___        ,			___        	 		___        	 		___
