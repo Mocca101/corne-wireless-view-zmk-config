@@ -201,7 +201,7 @@ ZMK_BASE_LAYER(Nav,
 ZMK_BASE_LAYER(FN,
 // ╭───────────────┬───────────────┬───────────────┬───────────────┬───────────────┬───────────────╮		╭───────────────┬───────────────┬────────────────┬───────────────┬───────────────┬────────────────╮
 			___				 			&kp F9	       	&kp F10        	&kp F11        	&kp F12      			___      	 ,			___     				&kp C_PREV    		&kp C_NEXT  			___							___							___					,
-			___    					&hml LCTRL F5 	&hml LSHIFT F6	&hml LALT F7    &hml LGUI F8			___		 		 ,			DSK_PREV     		VOL_DOWN		    VOL_UP  				DSK_NEXT     				___		TEMPLATE					___					,
+			___    					&hml LCTRL F5 	&hml LSHIFT F6	&hml LALT F7    &hml LGUI F8			___		 		 ,			DSK_PREV     		VOL_DOWN		    VOL_UP  				DSK_NEXT     				___							___					,
 			___    					&kp F1	       	&kp F2        		&kp F3        	&kp F4     			___		 	 	 ,			PIN_APP       	PIN_WIN       	DSK_MGR           	___           	___  						___					,
 																										 	___        	 		___      	 				___      	 ,			&kp C_MUTE    	&kp C_PP        	 		___
 //																								 ╰───────────────┴───────────────┴───────────────╯		╰───────────────┴───────────────┴───────────────╯
